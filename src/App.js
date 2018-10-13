@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CreateUser from './CreateUser';
 import logo from './logo.svg';
 import './App.css';
 
@@ -11,6 +12,16 @@ The instructions for this project are located in the `instructions.md` file.
 */
 
 class App extends Component {
+  state = {
+    users : []
+  }
+
+  updateUsers = (user) => {
+    this.setState(thisState => ({
+      users : [...thisState.users, user]
+    }));
+  }
+
   render() {
     return (
       <div className="App">
@@ -18,6 +29,10 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
+    	<CreateUser 
+    		users={this.state.users}
+			updateUsers={this.updateUsers}/>
+		{JSON.stringify(this.state)}
       </div>
     );
   }
