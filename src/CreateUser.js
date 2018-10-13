@@ -84,7 +84,7 @@ class CreateUser extends Component {
               type="submit" 
               disabled={!this.isValid()}>Add</button>
         </form>
-		{this.userExists() ? (<p>Username already exists.</p>) : ''}
+		{this.userExists() ? (<p className="error">Username already exists.</p>) : ''}
       </div>
     )
   }
