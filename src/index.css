@@ -17,6 +17,10 @@ li {
   height: 5%;
 }
 
+form {
+  position: relative;
+}
+
 input {
   margin: 10px;
   display: inline-block;
@@ -78,4 +82,15 @@ button:disabled {
 
 .error {
   color: red;
+}
+
+.hidden {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 }

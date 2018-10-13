@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CreateUser from './CreateUser';
+import UsersList from './UsersList';
 import logo from './logo.svg';
 import './App.css';
 
@@ -23,7 +24,6 @@ class App extends Component {
   }
 
   render() {
-    
     return (
       <div className="App">
         <header className="App-header">
@@ -33,7 +33,8 @@ class App extends Component {
     	<CreateUser 
     		users={this.state.users}
 			updateUsers={this.updateUsers}/>
-		{JSON.stringify(this.state)}
+		<UsersList 
+			users={this.state.users} />
       </div>
     );
   }

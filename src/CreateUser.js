@@ -52,31 +52,35 @@ class CreateUser extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="firstName">First Name</label>
+          <label className="hidden" htmlFor="firstName">First Name</label>
           <input 
               id="firstName"  
               type="text" 
               name="firstName" 
+    		  placeholder="First Name" 
               value={this.state.firstName} 
               onChange={this.handleChange} />
 
-          <label htmlFor="lastName">Last Name</label>
+          <label className="hidden" htmlFor="lastName">Last Name</label>
           <input 
               id="lastName" 
               type="text" 
               name="lastName" 
+			  placeholder="Last Name" 
               value={this.state.lastName} 
               onChange={this.handleChange} />
 
-          <label htmlFor="userName">Username</label>
+          <label className="hidden" htmlFor="userName">Username</label>
           <input 
               id="userName" 
               type="text" 
               name="userName" 
+			  placeholder="Username" 
               value={this.state.userName} 
               onChange={this.handleChange} />
 
           <button 
+			  className="smallButton" 
               type="submit" 
               disabled={!this.isValid()}>Add</button>
         </form>
@@ -85,7 +89,5 @@ class CreateUser extends Component {
     )
   }
 }
-
-
 
 export default CreateUser;
