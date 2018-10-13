@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class CreateUser extends Component {
+  
+  static propTypes = {
+    users: PropTypes.array.isRequired,
+    updateUsers: PropTypes.func.isRequired,
+  }
+
   state = {
     firstName: '',
     lastName: '',
     userName: '',
-    games: 0
+    numGames: 0
   }
   
   handleSubmit = (event) => {
@@ -29,9 +36,9 @@ class CreateUser extends Component {
   }
 
   isValid = () => {
-    const form = this.state;
-    return Object.keys(form).every(function (key) {
-      return !!form[key].trim();
+    const user = this.state;
+    return Object.keys(user).every(function (key) {
+      return !!String(user[key]).trim();
     });
   }
 
@@ -78,5 +85,7 @@ class CreateUser extends Component {
     )
   }
 }
+
+
 
 export default CreateUser;

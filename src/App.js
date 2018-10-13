@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CreateUser from './CreateUser';
-import UsersList from './UsersList';
 import logo from './logo.svg';
 import './App.css';
 
@@ -24,8 +23,7 @@ class App extends Component {
   }
 
   render() {
-    const {users} = this.state.users;
-
+    
     return (
       <div className="App">
         <header className="App-header">
@@ -33,9 +31,8 @@ class App extends Component {
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
     	<CreateUser 
-    		users={users}
+    		users={this.state.users}
 			updateUsers={this.updateUsers}/>
-		<UsersList users={users} />
 		{JSON.stringify(this.state)}
       </div>
     );
